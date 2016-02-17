@@ -24,7 +24,7 @@ build/Makefile: ./deps/gyp ./deps/clipper ./deps/protozero gyp/build.gyp
 vtile-encode: build/Makefile Makefile vtile-encode.cpp
 	@$(MAKE) -C build/ BUILDTYPE=$(BUILDTYPE) V=$(V)
 
-test: vtile-encode
+test: vtile-encode ./node_modules/mapnik
 	./build/$(BUILDTYPE)/vtile-encode | protoc --decode_raw
 	./build/$(BUILDTYPE)/vtile-encode | ./vtile2geojson.js
 
