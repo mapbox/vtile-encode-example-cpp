@@ -1,0 +1,10 @@
+{
+  "name": "vtile-encode-test",
+  "description": "Test opening a vector tile with node-mapnik",
+  "version" : "0.1.0",
+  "license": "BSD",
+  "main": "./test.js",
+  "dependencies": {
+    "mapnik" : "~3.4.16"
+  }
+}
