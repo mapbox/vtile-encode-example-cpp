@@ -5,6 +5,7 @@
   "license": "BSD",
   "main": "./test.js",
   "dependencies": {
-    "mapnik" : "~3.4.16"
+    "mapnik" : "~3.4.16",
+    "geojsonio-cli" : "~0.1.2"
   }
 }

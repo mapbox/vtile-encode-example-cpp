@@ -6,7 +6,7 @@ GYP_REVISION=3464008
 
 all: vtile-encode
 
-./node_modules/mapnik:
+./node_modules:
 	npm install
 
 ./deps/gyp:
@@ -24,14 +24,17 @@ build/Makefile: ./deps/gyp ./deps/clipper ./deps/protozero gyp/build.gyp
 vtile-encode: build/Makefile Makefile vtile-encode.cpp
 	@$(MAKE) -C build/ BUILDTYPE=$(BUILDTYPE) V=$(V)
 
-test: vtile-encode ./node_modules/mapnik
+test: vtile-encode ./node_modules
 	./build/$(BUILDTYPE)/vtile-encode | protoc --decode_raw
 	./build/$(BUILDTYPE)/vtile-encode | ./vtile2geojson.js
+
+viz: vtile-encode ./node_modules
+	./build/$(BUILDTYPE)/vtile-encode | ./vtile2geojson.js | ./node_modules/.bin/geojsonio
 
 
 clean:
 	rm -rf ./build
-	rm -rf ./deps/protozero
-	rm -rf ./deps/clipper
+	rm -rf ./deps/
+	rm -rf ./node_modules/
 
 .PHONY: test
