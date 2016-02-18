@@ -147,7 +147,7 @@ int main() {
         lonlat2merc(px_merc,py_merc);
         // convert to integer tile coordinates
         std::int64_t px = std::round((px_merc - tile_bbox.minx) * tile_extent/16 / tile_bbox.width());
-        std::int64_t py = std::round((tile_bbox.maxy - py_merc) * tile_extent/16 / tile_bbox.width());
+        std::int64_t py = std::round((tile_bbox.maxy - py_merc) * tile_extent/16 / tile_bbox.height());
         tile_line.emplace_back(px*tile_extent/256,py*tile_extent/256);
     }
 
