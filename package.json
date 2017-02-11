@@ -1,11 +1,11 @@
 {
-  "name": "vtile-encode-test",
-  "description": "Test opening a vector tile with node-mapnik",
-  "version" : "0.1.0",
-  "license": "BSD",
-  "main": "./test.js",
+  "name": "vtile-encode-test", 
+  "license": "BSD-2-Clause", 
+  "version": "0.1.0", 
   "dependencies": {
-    "mapnik" : "~3.4.16",
-    "geojsonio-cli" : "~0.1.2"
-  }
+    "geojsonio-cli": "~0.1.2", 
+    "mapnik": "~3.4.16"
+  }, 
+  "main": "./test.js", 
+  "description": "Test opening a vector tile with node-mapnik"
 }
